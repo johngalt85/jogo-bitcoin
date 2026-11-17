@@ -65,13 +65,20 @@
   #cena .cont { font:700 17px system-ui,sans-serif; margin:10px 0; color:#fff; min-height:24px; }
   #cena p { max-width:420px; font-size:16px; line-height:1.45; margin:6px 0; }
   #cena .bt { max-width:320px; text-align:center; margin-top:16px; }
+  #olho, #vigia { font:700 12px/1.2 system-ui,sans-serif; border-radius:6px; padding:5px 8px; margin-top:6px; display:table; }
+  #vigia { display:block; margin:0 0 10px; font-size:14px; padding:9px 10px; text-align:center; }
+  #olho.ok, #vigia.ok { background:#2f5f43; color:#eaf7ee; }
+  #olho.alerta, #vigia.alerta { background:#b9801f; color:#1b1420; }
+  #olho.perigo, #vigia.perigo { background:#b5432f; color:#fff; animation:chama2 .6s infinite; }
+  @keyframes chama2 { 50% { background:#e0563d; } }
+  .lbl.perigo { background:#b5432f; border-color:#fff; }
   .oculto { display:none !important; }
   #semgl { position:fixed; inset:0; display:none; align-items:center; justify-content:center; padding:30px; text-align:center; font-size:17px; }
 </style>
 </head>
 <body>
 <div id="stage"><canvas id="c"></canvas><div id="labels"></div></div>
-<div id="hud"><div id="obj"><b>Objetivo</b><span id="objTxt"></span></div><button id="btnCad">Caderno</button></div>
+<div id="hud"><div id="obj"><b>Objetivo</b><span id="objTxt"></span><div id="olho" class="ok">Janelas vazias</div></div><button id="btnCad">Caderno</button></div>
 <div id="toast"></div>
 <div id="veu"><div id="painel"></div></div>
 <div id="cena"></div>
